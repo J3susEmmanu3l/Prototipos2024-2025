@@ -1,140 +1,176 @@
-.form-container{
-    width: 320px;
-    border-radius: 0.75rem;
-    background-color: #fff;
-    padding: 2rem;
-    color: rgba(243, 244, 246, 1);
-}
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 350px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+/* Texto de Registro*/
+.title {
+  font-size: 28px;
+  color: rgb(99, 21, 15);
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+/* Circulo expandiendose */
+.title::before,.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: rgb(99, 21, 15);
+}
+/* Circulo fijo */
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: rgb(138, 39, 32);
+}
+/* Animación del círculo */
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+/* Texto Ya tienes una cuenta?*/
+.message, .signin {
+  color: rgba(156, 163, 175, 1);
+  font-size: 14px;
+}
+/* Texto de Inciar sesion*/
+.signin {
+  text-align: center;
+}
+/* Texto iniciar sesion*/
+.signin a {
+  color: rgba(199, 75, 62, 0.8784313725);
+}
+/* Hover Texto iniciar sesion*/
+.signin a:hover {
+  text-decoration: underline rgba(199, 75, 62, 0.8784313725);
+}
+/* Recuadros Nombres y Apellidos*/
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+/* Texto de nombres, apellidos, correo, etc..*/
+.form label {
+  position: relative;
+}
+/* Recuadro alrededor del texto de nombres, apellidos, correo, etc..*/
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+/* Esto hace que el texto de nombres, apellidos, correo, etc.. este */
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+/* Texto verde despues de que pones los datos */
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: green;
+}
+.radio-group {
+  display: flex;
+  align-items: center; 
+  gap: 15px;
+}
+.radio-title {
+  font-size: 14px;
+  color: rgba(105, 105, 105, 0.8);
+  font-weight: 600;
+  margin-right: 10px; 
+}
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+  font-size: 14px;
+  color: rgba(105, 105, 105, 0.8);
+}
+.radio-option input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(105, 105, 105, 0.5);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  display: inline-block;
+}
+.radio-option input[type="radio"]:checked {
+  border-color: rgb(99, 21, 15);
+  background-color: rgb(99, 21, 15);
+}
+
+.radio-option input[type="radio"]:checked::before {
+  background-color: #fff;
+}
+.radio-option .radio-label {
+  cursor: pointer;
+}
+
+/* Botonr Registrarse */
+.submit {
+  border: none;
+  outline: none;
+  background-color: rgb(99, 21, 15);
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+}
+/* Hover Boton Registrarse */
+.submit:hover {
+  background-color: rgb(171, 72, 65);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
   }
 
-  .title {
-    font-size: 28px;
-    color: #0099ff;
-    font-weight: 600;
-    letter-spacing: -1px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
+  to {
+    transform: scale(1.8);
+    opacity: 0;
   }
-
-  .title::before,.title::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: #0099ff;
-  }
-
-  .title::before {
-    width: 18px;
-    height: 18px;
-    background-color: #0099ff;
-  }
-
-  .title::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-  }
-
-  .message, .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
-  }
-
-  .signin {
-    text-align: center;
-  }
-
-  .signin a {
-    color: #0099ff;
-  }
-
-  .signin a:hover {
-    text-decoration: underline #0099ff;
-  }
-
-  .flex {
-    display: flex;
-    width: 100%;
-    gap: 6px;
-  }
-
-  .form label {
-    position: relative;
-  }
-
-  .form label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-  }
-
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
-
-  .form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-
-  .form label .input:valid + span {
-    color: green;
-  }
-
-  .submit {
-    border: none;
-    outline: none;
-    background-color: #0099ff;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    transform: .3s ease;
-  }
-
-  .submit:hover {
-    background-color: rgb(56, 90, 194);
-  }
-
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
-  }
+}
 
   .centrar {
     padding: 10%;
