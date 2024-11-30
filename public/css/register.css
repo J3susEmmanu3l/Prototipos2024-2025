@@ -1,3 +1,4 @@
+/* Cuadro blanco */
 .form {
   display: flex;
   flex-direction: column;
@@ -172,9 +173,9 @@
   }
 }
 
-  .centrar {
-    padding: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.centrar {
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
