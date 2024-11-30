@@ -10,7 +10,7 @@
     <div class="centrar">
         <div class="container">
             <div class="heading">Iniciar sesión</div>
-            <form class="form" action="">
+            <form class="form" >
               <input
                 placeholder="Correo electrónico"
                 id="email"

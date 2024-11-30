@@ -20,12 +20,12 @@
                 <input required="" placeholder="" type="text" class="input">
                 <span>Apellido</span>
             </label>
-        </div>  
-                
+        </div>
+
         <label>
             <input required="" placeholder="" type="email" class="input">
             <span>Correo Electrónico</span>
-        </label> 
+        </label>
 
     <div class="radio-group">
         <div class="radio-option">

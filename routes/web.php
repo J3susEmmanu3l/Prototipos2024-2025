@@ -5,10 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
 
 
-Route::get('/', [HomeController::class, 'iniciarsesion']);
-Route::get('/iniciarsesion', [HomeController::class, 'iniciarsesion']);
+Route::get('/', [HomeController::class, 'inicio']);
 
+Route::get('/iniciarsesion', [HomeController::class, 'iniciarsesion']);
 Route::get('/register', [HomeController::class, 'register']);
+Route::get('/olvidarcontraseña', [HomeController::class, 'olvidar']);
 
 Route::get('/principal', [HomeController::class, 'principal']);
 
@@ -26,6 +27,4 @@ Route::get('/principal', [HomeController::class, 'principal']);
     } else {
         return "Bienvenido al curso: $curso";
     }
-
-
 });*/

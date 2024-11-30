@@ -6,17 +6,25 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function iniciarsesion(){
+    public function inicio(){
         //return view('welcome');
-        return view('iniciarsesion');
+        return view('inicio');
     }
 
+    public function iniciarsesion(){
+        //return view('welcome');
+        return view('inr.iniciarsesion');
+    }
     public function register(){
         //return view('welcome');
-        return view('register');
+        return view('inr.register');
+    }
+    public function olvidar(){
+        //return view('welcome');
+        return view('inr.olvidar');
     }
 
     public function principal(){
-        return view('principal');
+        return view('pag.principal');
     }
 }
