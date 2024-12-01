@@ -8,22 +8,23 @@
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif; background-color: #e8e8e8;">
     <div class="centrar">
-        <form class="form">
+        <form class="form" action="{{url('upload')}}" method="POST" enctype="multipart/form-data">
+            @csrf
         <p class="title">Registrarse</p>
             <div class="flex">
             <label>
-                <input required="" placeholder="" type="text" class="input">
+                <input required="" placeholder="" type="text" class="input" name="nombre">
                 <span>Nombres</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="text" class="input">
+                <input required="" placeholder="" type="text" class="input" name="apellido">
                 <span>Apellido</span>
             </label>
         </div>
 
         <label>
-            <input required="" placeholder="" type="email" class="input">
+            <input required="" placeholder="" type="email" class="input" name="email">
             <span>Correo Electrónico</span>
         </label>
 
@@ -39,15 +40,18 @@
     </div>
 
         <label>
-            <input required="" placeholder="" type="password" class="input">
+            <input required="" placeholder="" type="password" class="input" name="password">
             <span>Contraseña</span>
         </label>
         <label>
-            <input required="" placeholder="" type="password" class="input">
+            <input required="" placeholder="" type="password" class="input" name="password_confirmation">
             <span>Confirmar Contraseña</span>
         </label>
+        @if ($errors->has('password'))
+            <span class="text-danger">{{ $errors->first('password')}}</span>
+        @endif
         <button class="submit">Registrarse</button>
-        <p class="signin">Ya tienes una cuenta? <a href="#">Iniciar Sesión</a> </p>
+        <p class="signin">Ya tienes una cuenta? <a href="{{asset('/iniciarsesion')}}">Iniciar Sesión</a> </p>
     </form>
     </div>
 </body>

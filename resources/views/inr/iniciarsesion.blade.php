@@ -10,27 +10,34 @@
     <div class="centrar">
         <div class="container">
             <div class="heading">Iniciar sesión</div>
-            <form class="form" >
-              <input
-                placeholder="Correo electrónico"
-                id="email"
-                name="email"
-                type="email"
-                class="input"
-                required=""
-              />
-              <input
-                placeholder="Contraseña"
-                id="password"
-                name="password"
-                type="password"
-                class="input"
-                required=""
-              />
-              <span class="forgot-password"><a href="#">Olvidaste tu contraseña?</a></span>
-              <input value="Iniciar sesión" type="submit" class="login-button" />
+
+            @if (session('error'))
+                <p style="color: red;">{{ session('error') }}</p>
+            @endif
+
+            <form class="form" action="{{ route('login') }}" method="POST">
+                @csrf
+                <input
+                    placeholder="Correo electrónico"
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="input"
+                    required=""
+                />
+                <input
+                    placeholder="Contraseña"
+                    id="password"
+                    name="password"
+                    type="password"
+                    class="input"
+                    required=""
+                />
+                <span class="forgot-password"><a href="#">¿Olvidaste tu contraseña?</a></span>
+                <input value="Iniciar sesión" type="submit" class="login-button" />
             </form>
-            <p class="signup">No tienes cuenta? <a href="register">Sign up</a></p>
+            <p class="signup">¿No tienes cuenta? <a href="{{ route('register') }}">Regístrate</a></p>
+        </div>
     </div>
 </body>
 </html>
