@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="css/register.css">
+<<<<<<< HEAD
     
+=======
+    <style>
+        .show-password {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .show-password input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    </style>
+>>>>>>> ecd090f8e5c749b6609b7b39052931e1f152b28e
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif; background-color: #e8e8e8;">
     <div class="centrar">
@@ -73,4 +88,3 @@
         });
     </script>
 </body>
-</html>
