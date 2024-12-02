@@ -1,3 +1,10 @@
+/* Centra el Menú en medio de la Pantalla */
+.centrar {
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Cuadro blanco */
 .form {
   display: flex;
@@ -105,19 +112,19 @@
 }
 .radio-group {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 15px;
 }
 .radio-title {
   font-size: 14px;
   color: rgba(105, 105, 105, 0.8);
   font-weight: 600;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 .radio-option {
   display: flex;
   align-items: center;
-  gap: 5px; 
+  gap: 5px;
   font-size: 14px;
   color: rgba(105, 105, 105, 0.8);
 }
@@ -144,8 +151,19 @@
 .radio-option .radio-label {
   cursor: pointer;
 }
+/* Muestra la Contraseña registrada  */
+.show-password {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
 
-/* Botonr Registrarse */
+.show-password input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Boton Registrarse */
 .submit {
   border: none;
   outline: none;
@@ -161,6 +179,8 @@
   background-color: rgb(171, 72, 65);
 }
 
+
+
 @keyframes pulse {
   from {
     transform: scale(0.9);
@@ -173,9 +193,5 @@
   }
 }
 
-.centrar {
-  padding: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+
