@@ -40,6 +40,7 @@ class HomeController extends Controller
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
+            'user-type'=> 'required|string|max:15',
             'password' => 'required|string|min:8|max:20|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/|confirmed',
         ]);
 
@@ -48,6 +49,7 @@ class HomeController extends Controller
         $user->nombre = $validatedData['nombre'];
         $user->apellido = $validatedData['apellido'];
         $user->email = $validatedData['email'];
+        $user->docente = $validatedData['user-type'];
         $user->password = bcrypt($validatedData['password']);
         $user->save();
 
