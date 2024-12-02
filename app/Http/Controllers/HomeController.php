@@ -35,6 +35,7 @@ class HomeController extends Controller
 
     public function upload(Request $request)
     {
+        // Registra al usuario
         $validatedData = $request->validate([
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
@@ -42,6 +43,7 @@ class HomeController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
+        // Crea al nuevo usuario
         $user = new User();
         $user->nombre = $validatedData['nombre'];
         $user->apellido = $validatedData['apellido'];
@@ -49,21 +51,24 @@ class HomeController extends Controller
         $user->password = bcrypt($validatedData['password']);
         $user->save();
 
-        return redirect()->with('success', 'Usuario registrado correctamente. Inicia sesión.');
+        return redirect()->route('iniciarsesion')->with('success', 'Usuario registrado correctamente. ¡Inicia sesión!');
     }
 
     public function login(Request $request)
     {
+        // Validar las credenciales del usuario
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required|string',
         ]);
 
+        // Intentar autenticar al usuario
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('principal'); // Redirige a la página principal
         }
 
+        // Si la autenticación falla, redirigir de vuelta con un mensaje de error
         return back()->with('error', 'Las credenciales no coinciden con nuestros registros.');
     }
 }

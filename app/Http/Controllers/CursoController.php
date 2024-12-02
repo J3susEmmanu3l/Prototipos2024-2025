@@ -13,7 +13,7 @@ class CursoController extends Controller
     public function create(){ //se le declara normalmente create para crear un curso o lo que gustes
         return view('curso.create');
     }
-    public function show($curso){ //se le declara normalmente show para crear un curso o algo especificamente
+    public function show($curso){ //se le declara normalmente show para crear un curso con algo especificamente
         return view('curso.show', compact('curso'));
     }
 }
