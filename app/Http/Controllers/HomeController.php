@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function inicio()
+    public function main()
     {
-        return view('inicio');
+        return view('main');
     }
 
     public function iniciarsesion()
@@ -28,9 +28,14 @@ class HomeController extends Controller
         return view('inr.olvidar');
     }
 
-    public function principal()
+    public function docente()
     {
-        return view('pag.principal');
+        return view('pag.docente');
+    }
+
+    public function estudiante()
+    {
+        return view('pag.estudiante');
     }
 
     public function upload(Request $request)
@@ -49,15 +54,14 @@ class HomeController extends Controller
         $user->nombre = $validatedData['nombre'];
         $user->apellido = $validatedData['apellido'];
         $user->email = $validatedData['email'];
-        $user->docente = $validatedData['user-type'];
+        $user->tipo = $validatedData['user-type'];
         $user->password = bcrypt($validatedData['password']);
         $user->save();
 
         return redirect()->route('iniciarsesion')->with('success', 'Usuario registrado correctamente. ¡Inicia sesión!');
     }
 
-    public function login(Request $request)
-    {
+    public function login(Request $request){
         // Validar las credenciales del usuario
         $credentials = $request->validate([
             'email' => 'required|email',
@@ -66,8 +70,21 @@ class HomeController extends Controller
 
         // Intentar autenticar al usuario
         if (Auth::attempt($credentials)) {
+            // Regenerar la sesión para prevenir ataques de fijación de sesión
             $request->session()->regenerate();
-            return redirect()->route('principal'); // Redirige a la página principal
+
+            // Obtener el usuario autenticado
+            $user = Auth::user();
+
+            // Verificar el rol del usuario y redirigir
+            if ($user->tipo === 'docente') {
+                return redirect()->route('docente'); // Redirigir a la ruta docente
+            } elseif ($user->tipo === 'estudiante') {
+                return redirect()->route('estudiante'); // Redirigir a la ruta estudiante
+            }
+
+            // Opcional: redirigir a una página predeterminada si el rol no coincide
+            return redirect('/'); // Página predeterminada
         }
 
         // Si la autenticación falla, redirigir de vuelta con un mensaje de error

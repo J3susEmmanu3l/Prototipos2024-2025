@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
 
 // Página de inicio
-Route::get('/', [HomeController::class, 'inicio']);
+Route::get('/', [HomeController::class, 'main']);
 
 // Rutas de autenticación
 Route::get('/iniciarsesion', [HomeController::class, 'iniciarsesion'])->name('iniciarsesion');
@@ -17,7 +17,10 @@ Route::post('/upload', [HomeController::class, 'upload'])->name('upload');
 Route::get('/olvidarcontraseña', [HomeController::class, 'olvidar'])->name('olvidar');
 
 // Ruta protegida: solo accesible para usuarios autenticados
-Route::get('/principal', [HomeController::class, 'principal'])->middleware('auth')->name('principal');
+Route::get('/docente', [HomeController::class, 'docente'])->middleware('auth')->name('docente');
+
+Route::get('/estudiante', [HomeController::class, 'estudiante'])->middleware('auth')->name('estudiante');
+
 
 // Ejemplo de rutas para cursos (comentadas)
 Route::get('cursos', [CursoController::class, 'index']);
