@@ -1,0 +1,324 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+
+  /* Estilo del encabezado y navegación */
+  header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.5s ease;
+  }
+
+  header.abajo{
+    background-color: black;
+    padding: 1rem 2rem;
+  }
+
+
+  /* Check-In-Mate texto */
+  .brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .Iniciar{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .Iniciar a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Estilo de la sección hero */
+  .hero {
+    height: 100vh;
+    background-image: url('/photos/fondo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+
+  .hero-content {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  /*Boton INICIA YA*/
+  .cta {
+    display: inline-block;
+    margin-top: 25rem;
+    padding: 2rem 10rem;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  /*Hover boton INICIA YA*/
+  .cta:hover{
+    opacity: 80%;
+  }
+
+  /* Sección de características */
+  .features {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10rem;
+    padding: 4rem 2rem;
+    background-color: #fff;
+    color: #3c3c3c;
+    text-align: center;
+  }
+  /*Seccion de registrate, pon el codigo etc...*/
+  .feature {
+    padding: 40px 20px 40px 20px;
+    max-width: 500px;
+  }
+
+  .feature-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .feature h2 {
+    color: #6b0000; /* Color marrón oscuro */
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Botón Leer más */
+  .cta-section {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    background-color: #fff;
+    padding-bottom: 4rem;
+  }
+
+  .cta-red {
+    display: inline-block;
+    padding: 1rem 4rem;
+    background-color: #6b0000; /* Color marrón oscuro */
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .cta-red:hover {
+    background-color: #993c3c; /* Color marrón más claro al pasar el ratón */
+  }
+
+  /* Estilos para la sección de información */
+  .info-section {
+    display: flex;
+    align-items: center;
+    padding: 5rem;
+    background: #D9D9D9;
+  }
+
+  .info-section img {
+    max-width: 100%;
+    height: auto;
+    width: 800px; /* Ajusta este valor al tamaño deseado */
+    height: 800px; /* Hace que las imágenes sean cuadradas */
+    object-fit: cover; /* Asegura que las imágenes se vean bien dentro del cuadrado */
+  }
+
+  .info-section:nth-child(odd) {
+    flex-direction: row-reverse; /* Alterna la posición de las imágenes */
+  }
+
+  .info-section img {
+    max-width: 50%;
+  }
+
+  .info-content {
+    /* Font */
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+   /* */
+
+    /* Posicion del texto chaval*/
+    display: flex;
+    flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    /**/
+
+    /* Cuadrado blanco */
+    position: absolute;
+    top: 45.5%;
+    left: 40%;
+    transform: translate(-30%, -40%);
+    padding: 2rem;
+    width: 50%;
+    height: 60%;
+    color: #000000;
+    background: rgba(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+
+   /* Titulo dentro del cuadrado blanco */
+  .info-content h2 {
+    padding: 45px;
+    text-align: left; /* Alinea el texto a la derecha */
+    color: #000000;
+    font-size: 3rem;
+    width: 100%; /* pa q el texto ocupe todo el ancho disponible */
+    margin-bottom: 1rem; /* el espacio entre el título y el texto */
+  }
+
+   /* Texto dentro del cuadrado blanco */
+  .info-content p {
+    font-size: 1.1rem;
+    padding-left: 45px;
+    padding-right: 45px;
+    text-align: left; /* Alinea el texto a la derecha */
+    width: 100%;
+  }
+
+  /* Responsividad para las nuevas secciones */
+  @media (max-width: 768px) {
+    .info-section {
+      flex-direction: column; /* Coloca los elementos en columna en pantallas pequeñas */
+    }
+
+    .info-section img,
+    .info-content {
+      width: 100%;
+    }
+  }
+
+  /* Estilos del botón de la sección "Leer más" (Footer) */
+  .cta {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .cta button {
+    background-color: #a31f34; /* Color rojo del botón el q leyo esto se la come*/
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .footer {
+    background-color: #5a1414;
+    color: #ffffff;
+    padding: 50px 0px;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+
+  .footer-column {
+    margin-bottom: 20px;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 10px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 5px;
+  }
+
+  .footer-column a {
+    /* Font */
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* */
+
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .footer-column p {
+    /* Font */
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* */
+
+    font-size: 0.9em;
+    margin-top: 10px;
+  }
+
+  [data-aos] {
+    transition-timing-function: ease-out;
+  }

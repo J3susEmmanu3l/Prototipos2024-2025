@@ -1,14 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-In-Mate</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>PORNO</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init(); // Inicializar AOS
+    </script>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Programas</a></li>
+      </ul>
+      <div class="brand">Check-In-Mate</div>
 
-    <button onclick="location.href='iniciarsesion'">LOGIN</button>
+      <div class="Iniciar">
+        <li><a href="iniciarsesion">Iniciar Sesión</a></li>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    const nav = document.querySelector(".nav");
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("abajo",window.scrollY>0);
+    })
+  </script>
+
+  <main class="hero">
+    <div class="hero-content">
+      <h1>Escanea, registra y ahorra tiempo para enfocarte en enseñar.</h1>
+      <p>¡Entra ahora y optimiza tu tiempo!</p>
+      <div class="cta-hover">
+        <a href="register" class="cta">Inicia ya</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="features">
+    <div class="feature" data-aos="fade-up">
+      <img src="photos/user-regular.jpg" alt="Regístrate" class="feature-icon">
+      <h2>Regístrate</h2>
+      <p>Comienza ahora y crea tu cuenta en pocos pasos. Simplifica el registro de asistencia para tus clases con nuestra plataforma fácil de usar.</p>
+    </div>
+    <div class="feature" data-aos="fade-up" data-aos-delay="200">
+      <img src="photos/codigo-qr.png" alt="Pon el código" class="feature-icon">
+      <h2>Pon el código</h2>
+      <p>Genera y utiliza códigos QR personalizados para registrar la asistencia de tus estudiantes de manera rápida y sin errores.</p>
+    </div>
+    <div class="feature" data-aos="fade-up" data-aos-delay="400">
+      <img src="photos/maestro.png" alt="Sigue dando clases" class="feature-icon">
+      <h2>¡Sigue dando clases!</h2>
+      <p>Dedica más tiempo a tus clases y menos a la gestión de asistencia. Nuestra herramienta trabaja por ti para que te concentres en enseñar.</p>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <a href="#" class="cta-red">Leer más</a>
+  </div>
+
+  <section class="info-section" data-aos="fade-left">
+    <img src="photos/fondo2.png" alt="Gestión de asistencia">
+    <div class="info-content">
+      <h2>Innovación en la gestión de asistencia</h2>
+      <p>Implementa un sistema moderno y eficiente para gestionar la asistencia en tus clases. Con nuestra herramienta QR, simplificarás procesos y ganarás confianza en el uso de tecnología para tus actividades diarias.</p>
+    </div>
+  </section>
+
+  <!-- Segunda sección de información -->
+  <section class="info-section" data-aos="fade-right">
+    <img src="photos/fondo3.png" alt="Gestión de asistencia">
+    <div class="info-content">
+      <h2>¿Qué es Check-In-Mate?</h2>
+      <p>Check-In-Mate es una plataforma web innovadora creada para facilitar y optimizar el proceso de pase de lista en entornos educativos. A través del uso de códigos QR, permite registrar la asistencia de los alumnos de forma ágil y precisa, eliminando la necesidad de métodos tradicionales y reduciendo el tiempo invertido en esta tarea. Los registros se almacenan automáticamente en una base de datos centralizada, proporcionando una gestión eficiente y confiable de la información.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Columna 1 -->
+      <div class="footer-column">
+        <h3>Check-In-Mate</h3>
+        <p>jijija<br>Mi Casa TIO</p>
+        <p>Hecho por <a href="#">Saoopng y ChatGPT</a></p>
+      </div>
+      <!-- Columna 2 -->
+      <div class="footer-column">
+        <h3>Información</h3>
+        <ul>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+      <!-- Columna 3 -->
+      <div class="footer-column">
+        <h3>Programas</h3>
+        <ul>
+          <li><a href="#">Little Kids (2 a 6 años)</a></li>
+          <li><a href="#">Big Kids (7 a 13 años)</a></li>
+        </ul>
+        <p>Todas las actividades requieren la supervisión de un adulto.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
