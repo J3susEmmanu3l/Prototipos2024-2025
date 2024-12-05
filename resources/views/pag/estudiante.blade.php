@@ -4,22 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Alumno</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estudiante.css">
+    <script src="js/panelalumno.js"></script>
 </head>
 <body>
-    <div class="dashboard">
-        <!-- Sidebar -->
-        <nav class="sidebar">
-            <h2>Alumno</h2>
-            <ul>
+
+    <header class="header-principal">
+        <!-- Ícono del menú hamburguesa -->
+        <button id="abrir" class="abrir-menu">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <nav class="nav" id="nav">
+            <!-- Ícono de cierre del menú -->
+            <button class="cerrar-menu" id="cerrar">
+                <div class="hamburger close">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <ul class="nav-list">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Mis Materias</a></li>
                 <li><a href="#">Calificaciones</a></li>
                 <li><a href="#">Faltas</a></li>
-                <li><a href="#">Perfil</a></li>
             </ul>
-            <a href="#" class="logout">Cerrar sesión</a>
         </nav>
+            <img class="foto" src="how2.jpg" alt="Foto de perfil">
+    </header>
 
         <!-- Main Content -->
         <main class="main-content">
@@ -36,6 +58,7 @@
                     <h3>Materias</h3>
                     <p>Consulta tus materias y horarios.</p>
                     <button>Ir a mis materias</button>
+
                 </div>
                 <div class="card">
                     <h3>Calificaciones</h3>
@@ -45,5 +68,6 @@
             </section>
         </main>
     </div>
+    <script src="Panel_de_maestro.js"></script>
 </body>
 </html>
