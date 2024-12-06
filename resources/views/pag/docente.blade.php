@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/docente.css">
-    <script src="js/panelmaestro.js"></script>
 </head>
 <body>
 
@@ -41,7 +40,26 @@
                 <li><a href="#">Configuración</a></li>
             </ul>
         </nav>
-            <img class="foto" src="how2.jpg" alt="Foto de perfil">
+
+        <nav class="nav nav2" id="nav2">
+            <!-- Ícono de cierre del menú -->
+            <button class="cerrar-menu" id="cerrar2">
+                <div class="hamburger close">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <ul class="nav-list">
+                <li><a href="#">Mi perfil</a></li>
+                <li><a href="#">Configuración</a></li>
+                <div class="cerrarsesion"><li><a href="iniciarsesion">CERRAR SESIÓN</a></li></div>
+            </ul>
+
+        </nav>
+                                                                            <!-- SE AGREGA ID A IMAGEN-->
+            <img class="foto" src="#" alt="Foto de perfil" id="img">
     </header>
 
         <!-- Main Content -->
@@ -68,6 +86,7 @@
             </section>
         </main>
     </div>
-    <script src="Panel_de_maestro.js"></script>
+    <!--SE CORRIGE SCRIP ESTABA PANEL MAESTRO SE COLOCA PANEL ALUMNO-->
+    <script src="js/panelmaestro.js"></script>
 </body>
 </html>

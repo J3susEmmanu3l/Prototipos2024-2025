@@ -11,5 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
         nav.classList.remove("visible");
     });
 
+    /* SE AGREGA EL ID DE LA IMAGEN Y DEL BOTON CERRAR 2 PARA QUE PUEDAS ABRIR Y CERRAR EL MENU
+    No es necesario declarar variables para asingar los id, con llamar a los id directamente es suficiente
+    pero hazlo como se te haga mas facil*/
+    img.addEventListener("click",()=>{
+        nav2.classList.add("visible2")
+    })
 
+    cerrar2.addEventListener("click", () => {
+        nav2.classList.remove("visible2");
+    });
 });

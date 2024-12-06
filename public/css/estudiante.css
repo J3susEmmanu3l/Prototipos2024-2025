@@ -6,6 +6,7 @@
 
 /* Estilos generales */
 body {
+    overflow: hidden;
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -70,6 +71,7 @@ body {
 
 /* Menu desplegable*/
 .nav-list {
+
     list-style-type: none;
     display: flex;
     gap: 1rem;
@@ -77,64 +79,103 @@ body {
 
 .nav-list li a {
     text-decoration: none;
-    color: #1c1c1c;
+}
+
+.cerrarsesion {
+    /* Si quieres que salga hasta abajo pon este y quita el otro margin*/
+    /* margin-top: 42rem;*/
+
+    margin-top: 30px;
+    background-color: #a13131;
+    color: #ffffff;
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 15px;
+    text-align: center; /* Centrar el texto */
+    font-weight: bold; /* Opcional: texto en negrita */
+    box-shadow: 0 5px 8px rgba(58, 8, 8, 0.4);;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para hover */
+}
+
+.cerrarsesion:hover {
+    background-color: #d64a4a; /* Fondo más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+.cerrarsesion a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: #ffffff;
+    display: block; /* Asegura que el enlace ocupe todo el botón */
 }
 
 .abrir-menu, .cerrar-menu {
     display: none;
 }
-    .abrir-menu,
-    .cerrar-menu {
-        display: block;
-        border: 0;
-        font-size: 1.25rem;
-        background-color: transparent;
-        cursor: pointer;
-    }
 
-    .abrir-menu {
-        color: #1c1c1c;
-    }
+.abrir-menu,
+.cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
+}
 
-    .cerrar-menu {
-        color: #ececec;
-        margin-bottom: 30px;
-    }
+.abrir-menu {
+    color: #1c1c1c;
+}
 
-    .nav {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-100%); /* Inicialmente fuera de la pantalla */
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 1rem;
-        position: absolute;
-        width: 15rem;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        background-color: #610b0b;
-        padding: 2rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
-        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s; /* Transición suave */
-    }
+.cerrar-menu {
+    color: #ececec;
+    margin-bottom: 30px;
+}
 
-    .nav.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0); /* Menú vuelve a su posición */
-        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s; /* Transición al mostrar */
-    }
+/*SE AGREGA NAV2 PARA QUE COMPARTA TODAS LAS CARACTERISTICAS DEL OTRO NAV. MAS ADELANTE SE AGREGA EL CAMBIO DE POSICION */
+.nav, .nav2 {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%); /* Inicialmente fuera de la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    position: absolute;
+    width: 15rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #610b0b;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s; /* Transición suave */
+}
 
-    .nav-list {
-        flex-direction: column;
-        align-items: start;
-    }
+.nav.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Menú vuelve a su posición */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s; /* Transición al mostrar */
+}
 
-    .nav-list li a {
-        color: #ecececec;
-    }
+/* SE AGREGA POSICION INICIAL FUERA DE LA PANTALLA DEL LADO DERECHO*/
+.nav2{
+    transform: translateX(100vw);
+}
+.nav2.visible2 {
+    opacity: 1;
+    visibility: visible;
+    /*SE AGREGA EL TRASLADO DEL 100% QUE ES LA DERECHA DE LA PANTALLA MENOS 15 REM QUE ES LO QUE MIDE EL MENU */
+    transform: translateX(calc(100vw - 15rem)); /* Menú vuelve a su posición */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s; /* Transición al mostrar */
+}
+
+.nav-list {
+    flex-direction: column;
+    align-items: start;
+}
+
+.nav-list li a {
+    color: #ecececec;
+}
 
 .main-content {
     flex: 1;
