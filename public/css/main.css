@@ -8,11 +8,12 @@
   body, html {
     font-family: Arial, sans-serif;
     color: white;
+    overflow-x: hidden;
   }
 
   /* Estilo del encabezado y navegación */
   header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -55,19 +56,20 @@
     gap: 2rem;
   }
 
+
   .Iniciar a {
     color: white;
     text-decoration: none;
   }
 
-  /* Estilo de la sección hero */
+  /* Estilo de la sección principal, donde sale la img, el titulo inicial y asi*/
   .hero {
     height: 100vh;
     background-image: url('/photos/fondo1.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
+    position: relative; 
   }
 
   .hero-content {
@@ -164,30 +166,45 @@
   }
 
   /* Estilos para la sección de información */
-  .info-section {
+  .info-section{
     display: flex;
     align-items: center;
-    padding: 5rem;
+    padding-top: 5rem;
+    padding-right: 7rem;
+    padding-left: 7rem;
     background: #D9D9D9;
   }
 
-  .info-section img {
+   .info-section2 {
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-right: 7rem;
+    padding-left: 7rem;
+    background: #D9D9D9;
+   }
+
+  .info-section img{
     max-width: 100%;
     height: auto;
-    width: 800px; /* Ajusta este valor al tamaño deseado */
-    height: 800px; /* Hace que las imágenes sean cuadradas */
-    object-fit: cover; /* Asegura que las imágenes se vean bien dentro del cuadrado */
+    width: 850px;
+    height: 740px;
+    object-fit: cover;
+  }
+  .info-section2 img{
+    max-width: 100%;
+    height: auto;
+    width: 850px;
+    height: 740px;
+    object-fit: cover;
   }
 
-  .info-section:nth-child(odd) {
+  .info-section:nth-child(odd), .info-section2:nth-child(odd) {
     flex-direction: row-reverse; /* Alterna la posición de las imágenes */
   }
 
-  .info-section img {
-    max-width: 50%;
-  }
-
-  .info-content {
+  .info-content{
     /* Font */
     font-family: "Lora", serif;
     font-optical-sizing: auto;
@@ -207,18 +224,47 @@
     position: absolute;
     top: 45.5%;
     left: 40%;
-    transform: translate(-30%, -40%);
+    transform: translate(15%, -51.4%);
     padding: 2rem;
-    width: 50%;
-    height: 60%;
+    width: 47%;
+    height: 70%;
     color: #000000;
     background: rgba(255, 255, 255);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #333;
   }
 
+  .info-content2 {
+   /* Font */
+   font-family: "Lora", serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
+  /* */
+
+   /* Posicion del texto chaval*/
+   display: flex;
+   flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
+   justify-content: center;
+   align-items: center;
+   text-align: left;
+   /**/
+
+   /* Cuadrado blanco */
+   position: absolute;
+   top: 45.5%;
+   left: 40%;
+   transform: translate(-72%, -52.4%);
+   width: 47%;
+   height: 70%;
+   color: #000000;
+   background: rgba(255, 255, 255);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   color: #333;
+  }
+
    /* Titulo dentro del cuadrado blanco */
-  .info-content h2 {
+  .info-content h2, .info-content2 h2 {
     padding: 45px;
     text-align: left; /* Alinea el texto a la derecha */
     color: #000000;
@@ -228,7 +274,7 @@
   }
 
    /* Texto dentro del cuadrado blanco */
-  .info-content p {
+  .info-content p, .info-content2 p {
     font-size: 1.1rem;
     padding-left: 45px;
     padding-right: 45px;
@@ -238,12 +284,12 @@
 
   /* Responsividad para las nuevas secciones */
   @media (max-width: 768px) {
-    .info-section {
+    .info-section, .info-section2 {
       flex-direction: column; /* Coloca los elementos en columna en pantallas pequeñas */
     }
 
     .info-section img,
-    .info-content {
+    .info-content, .info-section2 img, .info-content2 {
       width: 100%;
     }
   }
@@ -264,10 +310,15 @@
   }
 
   .footer {
+     /* Font */
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    /* */
     background-color: #5a1414;
     color: #ffffff;
     padding: 50px 0px;
-    font-family: Arial, sans-serif;
   }
 
   .footer-container {
