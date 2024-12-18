@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INICIO</title>
+    <title>Check-In-Mate</title>
     <link rel="stylesheet" href="css/register.css">
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif; background-color: #e8e8e8;">
+<body>
   <div class="centrar">
     <div class="container">
             <div class="heading">Registrarse</div>

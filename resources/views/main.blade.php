@@ -21,7 +21,7 @@
         <li><a href="#">Acerca de</a></li>
         <li><a href="#">Programas</a></li>
       </ul>
-      <div class="brand">Check-In-Mate</div>
+      <div class="brand">Check-In-Mate (Asistio)</div>
 
       <div class="Iniciar">
         <li><a href="iniciarsesion">Iniciar Sesión</a></li>

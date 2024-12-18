@@ -25,7 +25,17 @@ class HomeController extends Controller
 
     public function olvidar()
     {
-        return view('inr.olvidar');
+        return view('reset.olvidar');
+    }
+
+    public function codigorecuperacion()
+    {
+        return view('reset.codigorecuperacopm');
+    }
+
+    public function restaurar()
+    {
+        return view('reset.restaurar');
     }
 
     public function docente()

@@ -58,7 +58,7 @@
             </ul>
 
         </nav>
-                                                                            <!-- SE AGREGA ID A IMAGEN-->
+            <!-- SE AGREGA ID A IMAGEN-->
             <img class="foto" src="#" alt="Foto de perfil" id="img">
     </header>
 

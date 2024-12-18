@@ -14,7 +14,11 @@ Route::post('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::post('/upload', [HomeController::class, 'upload'])->name('upload');
 
-Route::get('/olvidarcontraseña', [HomeController::class, 'olvidar'])->name('olvidar');
+Route::get('/olvidar', [HomeController::class, 'olvidar'])->name('olvidar');
+
+Route::get('/codigorecuperacion', [HomeController::class, 'codigorecuperacion'])->name('codigorecuperacion');
+
+Route::get('/restaurar', [HomeController::class, 'restaurar'])->name('restaurar');
 
 // Ruta protegida: solo accesible para usuarios autenticados
 Route::get('/docente', [HomeController::class, 'docente'])->middleware('auth')->name('docente');

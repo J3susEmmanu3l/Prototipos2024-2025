@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INICIO</title>
+    <title>Check-In-Mate</title>
     <link rel="stylesheet" href="css/iniciarsesion.css">
 </head>
-<body style="font-family: Arial, Helvetica, sans-serif; background-color: #e8e8e8;">
+<body style="font-family: Arial, Helvetica, sans-serif; background: url(photos/fondo1.png); height: 100vh;">
+
     <div class="centrar">
         <div class="container">
             <div class="heading">Iniciar sesión</div>
 
-            @if (session('error'))
+  @if (session('error'))
                 <p style="color: red;">{{ session('error') }}</p>
             @endif
 
             <form class="form" action="{{ route('login') }}" method="POST">
-                @csrf
+                 @csrf
                 <input
                     placeholder="Correo electrónico"
                     id="email"
@@ -38,7 +39,7 @@
                     <label for="show-password">Mostrar contraseña</label>
                 </div>
 
-                <span class="forgot-password"><a href="#">¿Olvidaste tu contraseña?</a></span>
+                <span class="forgot-password"><a href="olvidar">¿Olvidaste tu contraseña?</a></span>
                 <input value="Iniciar sesión" type="submit" class="login-button" />
             </form>
             <p class="signup">¿No tienes cuenta? <a href="{{ route('register') }}">Regístrate</a></p>
