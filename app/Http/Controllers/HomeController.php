@@ -23,20 +23,7 @@ class HomeController extends Controller
         return view('inr.register');
     }
 
-    public function olvidar()
-    {
-        return view('reset.olvidar');
-    }
 
-    public function codigorecuperacion()
-    {
-        return view('reset.codigorecuperacopm');
-    }
-
-    public function restaurar()
-    {
-        return view('reset.restaurar');
-    }
 
     public function docente()
     {
@@ -104,4 +91,23 @@ class HomeController extends Controller
         // Si la autenticación falla, redirigir de vuelta con un mensaje de error
         return back()->with('error', 'Las credenciales no coinciden con nuestros registros.');
     }
-}   
+}
+
+
+
+
+      //Las mismas rutas de recuperar contraseñas pero no le supimos que pedo asi que los silenciamos como al Rocha Moya pendejo, inutil, estupido, imbecil, cara de viejo, pendejo, puto, pendejo. CONTEXTO VIEJO PENDEJO
+    // public function olvidar()
+    // {
+    //     return view('reset.olvidar');
+    // }
+
+    // public function codigorecuperacion()
+    // {
+    //     return view('reset.codigorecuperacion');
+    // }
+
+    // public function restaurar()
+    // {
+    //     return view('reset.restaurar');
+    // }

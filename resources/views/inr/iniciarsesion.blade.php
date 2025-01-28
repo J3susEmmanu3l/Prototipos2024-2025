@@ -39,7 +39,7 @@
                     <label for="show-password">Mostrar contraseña</label>
                 </div>
 
-                <span class="forgot-password"><a href="olvidar">¿Olvidaste tu contraseña?</a></span>
+                
                 <input value="Iniciar sesión" type="submit" class="login-button" />
             </form>
             <p class="signup">¿No tienes cuenta? <a href="{{ route('register') }}">Regístrate</a></p>

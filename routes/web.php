@@ -14,11 +14,7 @@ Route::post('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::post('/upload', [HomeController::class, 'upload'])->name('upload');
 
-Route::get('/olvidar', [HomeController::class, 'olvidar'])->name('olvidar');
 
-Route::get('/codigorecuperacion', [HomeController::class, 'codigorecuperacion'])->name('codigorecuperacion');
-
-Route::get('/restaurar', [HomeController::class, 'restaurar'])->name('restaurar');
 
 // Ruta protegida: solo accesible para usuarios autenticados
 Route::get('/docente', [HomeController::class, 'docente'])->middleware('auth')->name('docente');
@@ -40,3 +36,8 @@ Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
     }
 });
 */
+
+    //Rutas para recuperar contraseña pero como no supimos que pedo mejor lo silenciamos como al Rocha
+// Route::get('/olvidar', [HomeController::class, 'olvidar'])->name('olvidar');
+// Route::get('/codigorecuperacion', [HomeController::class, 'codigorecuperacion'])->name('codigorecuperacion');
+// Route::get('/restaurar', [HomeController::class, 'restaurar'])->name('restaurar');
