@@ -40,36 +40,40 @@ class HomeController extends Controller
 
     public function docente()
     {
-        return view('pag.docente');
+        $nombre = Auth::user();
+        return view('pag.docente', ['nombre' => $nombre->nombre]);
     }
 
     public function estudiante()
     {
-        return view('pag.estudiante');
+        $nombre = Auth::user();
+        return view('pag.estudiante' ,['nombre' => $nombre->nombre]);
     }
 
     public function upload(Request $request)
-    {
-        // Registra al usuario
-        $validatedData = $request->validate([
-            'nombre' => 'required|string|max:255',
-            'apellido' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
-            'user-type'=> 'required|string|max:15',
-            'password' => 'required|string|min:8|max:20|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/|confirmed',
-        ]);
+{
+    // Validación de los datos
+    $validatedData = $request->validate([
+        'nombre' => 'required|string|max:255',
+        'apellido' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email',
+        'user-type' => 'required|string|max:15', // Asegúrate de que este campo exista
+        'password' => 'required|string|min:8|confirmed', // Regla más simple para la contraseña
+    ]);
 
-        // Crea al nuevo usuario
-        $user = new User();
-        $user->nombre = $validatedData['nombre'];
-        $user->apellido = $validatedData['apellido'];
-        $user->email = $validatedData['email'];
-        $user->tipo = $validatedData['user-type'];
-        $user->password = bcrypt($validatedData['password']);
-        $user->save();
+    // Crear al nuevo usuario
+    $user = new User();
+    $user->nombre = $validatedData['nombre'];
+    $user->apellido = $validatedData['apellido'];
+    $user->email = $validatedData['email'];
+    $user->tipo = $validatedData['user-type']; // Reemplazar con el nombre correcto si es necesario
+    $user->password = bcrypt($validatedData['password']);
+    $user->save();
 
-        return redirect()->route('iniciarsesion')->with('success', 'Usuario registrado correctamente. ¡Inicia sesión!');
-    }
+    // Redirigir al formulario de inicio de sesión con mensaje de éxito
+    return redirect()->route('iniciarsesion')->with('success', 'Usuario registrado correctamente. ¡Inicia sesión!');
+}
+
 
     public function login(Request $request){
         // Validar las credenciales del usuario
@@ -100,4 +104,4 @@ class HomeController extends Controller
         // Si la autenticación falla, redirigir de vuelta con un mensaje de error
         return back()->with('error', 'Las credenciales no coinciden con nuestros registros.');
     }
-}
+}   

@@ -65,7 +65,7 @@
         <!-- Main Content -->
         <main class="main-content">
             <header>
-                <h1>Bienvenido, Profesor</h1>
+            <h1>Bienvenido, Profesor/a {{ $nombre }}</h1>
             </header>
             <section class="content">
                 <div class="card">
