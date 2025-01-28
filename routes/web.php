@@ -1,43 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CursoController;
 
-// Página de inicio
-Route::get('/', [HomeController::class, 'main']);
-
-// Rutas de autenticación
-Route::get('/iniciarsesion', [HomeController::class, 'iniciarsesion'])->name('iniciarsesion');
-Route::post('/login', [HomeController::class, 'login'])->name('login');
-
-Route::get('/register', [HomeController::class, 'register'])->name('register');
-Route::post('/upload', [HomeController::class, 'upload'])->name('upload');
-
-
-
-// Ruta protegida: solo accesible para usuarios autenticados
-Route::get('/docente', [HomeController::class, 'docente'])->middleware('auth')->name('docente');
-
-Route::get('/estudiante', [HomeController::class, 'estudiante'])->middleware('auth')->name('estudiante');
-
-
-// Ejemplo de rutas para cursos (comentadas)
-Route::get('cursos', [CursoController::class, 'index']);
-Route::get('cursos/create', [CursoController::class, 'create']);
-Route::get('cursos/{curso}', [CursoController::class, 'show']);
-
-/* Ruta con parámetros opcionales
-Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
-    if ($categoria) {
-        return "Bienvenido al curso $curso de la categoría $categoria";
-    } else {
-        return "Bienvenido al curso: $curso";
-    }
+Route::get('/', function () {
+    return view('welcome');
 });
-*/
 
-    //Rutas para recuperar contraseña pero como no supimos que pedo mejor lo silenciamos como al Rocha
-// Route::get('/olvidar', [HomeController::class, 'olvidar'])->name('olvidar');
-// Route::get('/codigorecuperacion', [HomeController::class, 'codigorecuperacion'])->name('codigorecuperacion');
-// Route::get('/restaurar', [HomeController::class, 'restaurar'])->name('restaurar');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
