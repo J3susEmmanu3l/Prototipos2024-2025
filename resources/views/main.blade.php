@@ -24,7 +24,7 @@
       <div class="brand">Check-In-Mate (Asistio)</div>
 
       <div class="Iniciar">
-        <li><a href="iniciarsesion">Iniciar Sesión</a></li>
+        <li><a href="{{route('login')}}">Iniciar Sesión</a></li>
       </div>
     </nav>
   </header>
@@ -42,7 +42,7 @@
       <h1>Escanea, registra y ahorra tiempo para enfocarte en enseñar.</h1>
       <p>¡Entra ahora y optimiza tu tiempo!</p>
       <div class="cta-hover">
-        <a href="register" class="cta">Inicia ya</a>
+        <a href="{{ route('register') }}" class="cta">Inicia ya</a>
       </div>
     </div>
   </main>

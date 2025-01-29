@@ -15,7 +15,7 @@
                 <p style="color: red;">{{ session('error') }}</p>
             @endif
 
-            <form class="form" action="{{ url('upload') }}" method="POST" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="flex">
                   <label>

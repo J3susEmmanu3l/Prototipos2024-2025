@@ -1,52 +1,72 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-In-Mate</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+  <div class="centrar">
+    <div class="container">
+            <div class="heading">Registrarse</div>
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+            @if (session('error'))
+                <p style="color: red;">{{ session('error') }}</p>
+            @endif
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
+                <div class="flex">
+                  <label>
+                    <input required placeholder="Nombre" type="text" class="name" name="nombre">
+                  </label>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+                  <label>
+                    <input required placeholder="Apellido" type="text" class="name" name="apellido">
+                  </label>
+                </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                <input placeholder="Correo electrónico" id="email" name="email" type="email" class="input email-field" required=""/>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                <div class="radio-group">
+                    <label class="radio-label">
+                      <input type="radio" name="user-type" value="docente" class="radio-option">
+                      Docente
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="user-type" value="estudiante" class="radio-option">
+                      Estudiante
+                    </label>
+                </div>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+                <input placeholder="Contraseña" id="password" name="password" type="password" class="input password-field" required=""/>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+                <input required placeholder="Confirmar Contraseña" type="password" class="input password-field" name="password_confirmation">
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+                <div class="show-password">
+                    <input type="checkbox" id="show-password">
+                    <label for="show-password">Mostrar contraseña</label>
+                </div>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+                @if ($errors->has('password'))
+                  <span class="text-danger">{{ $errors->first('password') }}</span>
+                @endif
+
+                <button class="login-button">Registrarse</button>
+                <p class="signup">¿Ya tienes una cuenta? <a href="{{ asset('login') }}">Iniciar Sesión</a></p>
+            </form>
+    </div>
+  </div>
+  <script>
+        // Mostrar u ocultar contraseñas al marcar el checkbox
+        document.getElementById('show-password').addEventListener('change', function () {
+            const passwordFields = document.querySelectorAll('.password-field');
+            passwordFields.forEach(field => {
+                field.type = this.checked ? 'text' : 'password';
+            });
+        });
+  </script>
+</body>
+</html>

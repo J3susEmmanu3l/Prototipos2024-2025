@@ -16,7 +16,7 @@
                 <p style="color: red;">{{ session('error') }}</p>
             @endif
 
-            <form class="form" action="{{ route('login') }}" method="POST">
+            <form method="POST" action="{{ route('login') }}">
                  @csrf
                 <input
                     placeholder="Correo electrónico"
@@ -39,7 +39,7 @@
                     <label for="show-password">Mostrar contraseña</label>
                 </div>
 
-                
+
                 <input value="Iniciar sesión" type="submit" class="login-button" />
             </form>
             <p class="signup">¿No tienes cuenta? <a href="{{ route('register') }}">Regístrate</a></p>

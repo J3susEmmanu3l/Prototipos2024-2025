@@ -55,7 +55,16 @@
             <ul class="nav-list">
                 <li><a href="#">Mi perfil</a></li>
                 <li><a href="#">Configuración</a></li>
-                <div class="cerrarsesion"><li><a href="iniciarsesion">CERRAR SESIÓN</a></li></div>
+                <div class="cerrarsesion">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <button type="submit" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                            {{ __('Log Out') }}
+                        </button>
+                    </form>
+                </div>
+
             </ul>
 
         </nav>
