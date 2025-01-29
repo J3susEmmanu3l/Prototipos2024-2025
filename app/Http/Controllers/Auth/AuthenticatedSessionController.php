@@ -24,34 +24,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        // Validar las credenciales del usuario
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string',
-        ]);
+        $request->authenticate();
 
-        // Intentar autenticar al usuario
-        if (Auth::attempt($credentials)) {
-            // Regenerar la sesión para prevenir ataques de fijación de sesión
-            $request->session()->regenerate();
+        $request->session()->regenerate();
 
-            // Obtener el usuario autenticado
-            $user = Auth::user();
-
-            // Verificar el rol del usuario y redirigir
-            if ($user->tipo === 'docente') {
-                return redirect()->route('docente'); // Redirigir a la ruta docente
-            } elseif ($user->tipo === 'estudiante') {
-                return redirect()->route('estudiante'); // Redirigir a la ruta estudiante
-            }
-
-            // Opcional: redirigir a una página predeterminada si el rol no coincide
-            return redirect('/'); // Página predeterminada
-        }
-
-        // Si la autenticación falla, redirigir de vuelta con un mensaje de error
-        return back()->with('error', 'Las credenciales no coinciden con nuestros registros.');
-
+        return redirect()->intended(route('dashboard', absolute: false));
     }
 
     /**
