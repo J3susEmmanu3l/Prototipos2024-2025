@@ -16,26 +16,38 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <!-- Role Selection Radios -->
+        <div class="mt-4">
+            <span class="text-gray-700">Selecciona tu rol:</span>
+            <div class="flex items-center mt-2">
+                <input type="radio" id="estudiante" name="tipo" value="estudiante" class="mr-2" 
+                    {{ old('tipo') == 'estudiante' ? 'checked' : '' }} required>
+                <label for="estudiante">Estudiante</label>
+            </div>
+            <div class="flex items-center mt-2">
+                <input type="radio" id="docente" name="tipo" value="docente" class="mr-2" 
+                    {{ old('tipo') == 'docente' ? 'checked' : '' }} required>
+                <label for="docente">Docente</label>
+            </div>
+            <x-input-error :messages="$errors->get('tipo')" class="mt-2" />
+        </div> <!-- <-- ¡Este div estaba faltando! -->
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
-
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
                             required autocomplete="new-password" />
-
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <!-- Confirm Password -->
         <div class="mt-4">
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
                             name="password_confirmation" required autocomplete="new-password" />
-
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
