@@ -31,12 +31,12 @@
 
                 <div class="radio-group">
                     <label class="radio-label">
-                      <input type="radio" name="user-type" value="docente" class="radio-option">
+                      <input type="radio" name="user-type" value="2" class="radio-option">
                       Docente
 
                     </label>
                     <label class="radio-label">
-                      <input type="radio" name="user-type" value="estudiante" class="radio-option">
+                      <input type="radio" name="user-type" value="1" class="radio-option">
                       Estudiante
                     </label>
                 </div>

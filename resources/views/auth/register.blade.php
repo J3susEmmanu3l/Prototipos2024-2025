@@ -20,13 +20,13 @@
         <div class="mt-4">
             <span class="text-gray-700">Selecciona tu rol:</span>
             <div class="flex items-center mt-2">
-                <input type="radio" id="estudiante" name="tipo" value="estudiante" class="mr-2" 
-                    {{ old('tipo') == 'estudiante' ? 'checked' : '' }} required>
+                <input type="radio" id="estudiante" name="tipo" value="1" class="mr-2" 
+                    {{ old('tipo') == '1' ? 'checked' : '' }} required>
                 <label for="estudiante">Estudiante</label>
             </div>
             <div class="flex items-center mt-2">
-                <input type="radio" id="docente" name="tipo" value="docente" class="mr-2" 
-                    {{ old('tipo') == 'docente' ? 'checked' : '' }} required>
+                <input type="radio" id="docente" name="tipo" value="2" class="mr-2" 
+                    {{ old('tipo') == '2' ? 'checked' : '' }} required>
                 <label for="docente">Docente</label>
             </div>
             <x-input-error :messages="$errors->get('tipo')" class="mt-2" />

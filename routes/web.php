@@ -8,8 +8,12 @@ Route::get('/', function () {
 });
 
 Route::get('/estudiante', function () {
-    return view('estudiante');
+    return view('pag.estudiante');
 })->middleware(['auth'])->name('estudiante');
+
+Route::get('/docente', function () {
+    return view('pag.docente');
+})->middleware(['auth'])->name('docente');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

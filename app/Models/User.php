@@ -17,6 +17,16 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
+
+     public function getRedirectRoute()
+    {
+        return match((int)$this->tipo) {
+            1 => 'student.dashboard',
+            2 => 'teacher.dashboard',
+            // ...
+        };
+    }
+
     protected $fillable = [
         'name',
         'email',

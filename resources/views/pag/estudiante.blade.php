@@ -75,7 +75,7 @@
         <!-- Main Content -->
         <main class="main-content">
             <header>
-                <h1>Bienvenido, {{ $nombre }}</h1>
+                <h1>Bienvenido, Puto</h1>
             </header>
             <section class="content">
                 <div class="card">
