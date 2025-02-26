@@ -24,7 +24,7 @@
       <div class="brand">Check-In-Mate (Asistio)</div>
 
       <div class="Iniciar">
-        <li><a href="{{route('login')}}">Iniciar Sesión</a></li>
+        <li><a href="{{route('login')}}">{{ __('Log in') }}</a></li>
       </div>
     </nav>
   </header>
