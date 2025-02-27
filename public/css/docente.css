@@ -94,6 +94,11 @@ body {
     font-weight: bold; /* Opcional: texto en negrita */
     box-shadow: 0 5px 8px rgba(58, 8, 8, 0.4);;
     transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para hover */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero */
+    display: inline-block; /* Mostrar en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 4px 2px; /* Margen */
 }
 
 .cerrarsesion:hover {

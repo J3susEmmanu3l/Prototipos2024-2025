@@ -31,25 +31,27 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'apellido' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'tipo' => 'required|in:1,2', // Asegura que sea un tipo válido
+            'tipo' => 'required|in:0,1', // Asegura que sea un tipo válido
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'apellido' => $request->apellido,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'tipo' => $request->tipo , // Si no selecciona, será estudiante
+            'tipo' => $request->tipo, // Se asigna el valor de 'tipo' proporcionado en el formulario
         ]);
 
         event(new Registered($user));
         Auth::login($user);
 
         if ($user->tipo === '1') {
-            return redirect()->route('estudiante');
+            return redirect()->route('docente.dashboard');
         } else {
-            return redirect()->route('docente'); // Redirigir a docentes al dashboard
+            return redirect()->route('estudiante.dashboard');
         }
     }
 }

@@ -1,19 +1,21 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\EstudianteController;
+use App\Http\Controllers\Backend\DocenteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/estudiante', function () {
-    return view('pag.estudiante');
-})->middleware(['auth'])->name('estudiante');
+// Route::get('/estudiante/dashboard', function () {
+//     return view('estudiante.dashboard');
+// })->middleware(['auth'])->name('estudiante.dashboard');
 
-Route::get('/docente', function () {
-    return view('pag.docente');
-})->middleware(['auth'])->name('docente');
+// Route::get('/docente/dashboard', function () {
+//     return view('docente.dashboard');
+// })->middleware(['auth'])->name('docente.dashboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +31,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::middleware(['auth', 'tipo:0'])->group(function () {
+    Route::get('/estudiante/dashboard', [EstudianteController::class, 'dashboard'])->name('estudiante.dashboard');
+
+});
+Route::middleware(['auth', 'tipo:1'])->group(function () {
+    Route::get('/docente/dashboard', [DocenteController::class, 'dashboard'])->name('docente.dashboard');
+
+});

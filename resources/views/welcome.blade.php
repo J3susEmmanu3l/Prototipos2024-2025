@@ -42,7 +42,7 @@
       <h1>Escanea, registra y ahorra tiempo para enfocarte en enseñar.</h1>
       <p>¡Entra ahora y optimiza tu tiempo!</p>
       <div class="cta-hover">
-        <a href="{{ route('register') }}" class="cta">Inicia ya</a>
+        <a href="{{ route('register') }}" class="cta">{{ __('Star Now' )}}</a>
       </div>
     </div>
   </main>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/docente.css">
+    <link rel="stylesheet" href="{{ asset('css/docente.css') }}">
 </head>
 <body>
 
@@ -54,15 +54,12 @@
             <ul class="nav-list">
                 <li><a href="#">Mi perfil</a></li>
                 <li><a href="#">Configuración</a></li>
-                <div class="cerrarsesion">
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-
-                        <button type="submit" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                            {{ __('Log Out') }}
-                        </button>
-                    </form>
-                </div>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="cerrarsesion" >
+                        {{ __('Log Out') }}
+                    </button>
+                </form>
             </ul>
 
         </nav>
@@ -95,6 +92,6 @@
         </main>
     </div>
     <!--SE CORRIGE SCRIP ESTABA PANEL MAESTRO SE COLOCA PANEL ALUMNO-->
-    <script src="js/panelmaestro.js"></script>
+    <script src="{{ asset('js/panelmaestro.js') }}"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <!--SE CORRIGE HOJA DE REFERENCIA, ESTABA PANEL DE MAESTRO SE CAMBIA A PANEL DE ALUMNO-->
-    <link rel="stylesheet" href="css/estudiante.css">
+    <link rel="stylesheet" href="{{ asset('css/estudiante.css') }}">
 
 </head>
 <body>
@@ -55,16 +55,12 @@
             <ul class="nav-list">
                 <li><a href="#">Mi perfil</a></li>
                 <li><a href="#">Configuración</a></li>
-                <div class="cerrarsesion">
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-
-                        <button type="submit" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                            {{ __('Log Out') }}
-                        </button>
-                    </form>
-                </div>
-
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="cerrarsesion" >
+                        {{ __('Log Out') }}
+                    </button>
+                </form>
             </ul>
 
         </nav>
@@ -98,6 +94,6 @@
         </main>
     </div>
     <!--SE CORRIGE SCRIP ESTABA PANEL MAESTRO SE COLOCA PANEL ALUMNO-->
-    <script src="js/panelalumno.js"></script>
+    <script src="{{ asset('js/panelalumno.js') }}"></script>
 </body>
 </html>
