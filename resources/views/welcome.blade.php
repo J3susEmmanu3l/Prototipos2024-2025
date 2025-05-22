@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Check-In-Mate</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
     })
   </script>
 
-  <main class="hero">
+  <main class="hero" style="background-image: url('photos/fondo1.png');">
     <div class="hero-content">
       <h1>Escanea, registra y ahorra tiempo para enfocarte en enseñar.</h1>
       <p>¡Entra ahora y optimiza tu tiempo!</p>

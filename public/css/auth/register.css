@@ -93,7 +93,7 @@ body {
   .name::placeholder {
   color: rgb(170, 170, 170);
   }
-  
+
   .name:focus {
     outline: none;
     border-inline: 2px solid #b95d58;

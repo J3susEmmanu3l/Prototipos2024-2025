@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Alumno</title>
+    <title>Grupos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <!--SE CORRIGE HOJA DE REFERENCIA, ESTABA PANEL DE MAESTRO SE CAMBIA A PANEL DE ALUMNO-->
-    <link rel="stylesheet" href="{{ asset('css/estudiante/estudiante.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/docente/clases.css') }}">
 </head>
 <body>
 
@@ -35,10 +33,10 @@
             </button>
 
             <ul class="nav-list">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Mis Materias</a></li>
+                <li><a href="{{ route('docente.dashboard') }}">{{ __('Home') }}</a></li>
+                <li><a href="#">Grupos</a></li>
+                <li><a href="#">Asignaciones</a></li>
                 <li><a href="#">Calificaciones</a></li>
-                <li><a href="#">Faltas</a></li>
             </ul>
         </nav>
 
@@ -64,36 +62,32 @@
             </ul>
 
         </nav>
-                                                                            <!-- SE AGREGA ID A IMAGEN-->
-            <img class="foto" src="#" alt="Foto de perfil" id="img">
+             <!-- SE AGREGA ID A IMAGEN-->
+            <img class="foto" src="how2.jpg" alt="Foto de perfil" id="img">
     </header>
 
         <!-- Main Content -->
         <main class="main-content">
             <header>
-                <h1>Bienvenido, *NAME*</h1>
+                <h1>Bienvenido, Profesor</h1>
             </header>
             <section class="content">
-                <div class="card">
-                    <h3>Mis Faltas</h3>
-                    <p>Tienes <strong>3</strong> faltas en Matemáticas.</p>
-                    <button>Ver detalles</button>
-                </div>
-                <div class="card">
-                    <h3>Materias</h3>
-                    <p>Consulta tus materias y horarios.</p>
-                    <button>Ir a mis materias</button>
-
-                </div>
-                <div class="card">
-                    <h3>Calificaciones</h3>
-                    <p>Revisa tus calificaciones más recientes.</p>
-                    <button>Ver calificaciones</button>
-                </div>
-            </section>
+            <!-- Botón grande con "+" -->
+            <a href="" class="add-button">+</a>
         </main>
-    </div>
-    <!--SE CORRIGE SCRIP ESTABA PANEL MAESTRO SE COLOCA PANEL ALUMNO-->
-    <script src="{{ asset('js/estudiante/panelalumno.js') }}"></script>
+
+        <!--Modal (Ventana emergente) -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                    <h2 class="text-modal">Agregar una nueva clase</h2>
+                    <p class="text-modal2">Introduce los detalles de la nueva clase:</p>
+                <input type="text" placeholder="Nombre de la clase" id="class-name"><br><br>
+                <button class="Agregar-btn" onclick="agregarModal()">Agregar</button>
+                <button class="Agregar-btn" id="cerrar-modal">Cerrar</button> <!-- Se cambia onclick por id -->
+            </div>
+        </div>
+    <!--SE CORRIGE SCRIPT ESTABA PANEL MAESTRO SE COLOCA PANEL ALUMNO-->
+    <script src="{{ asset('js/docente/clases.js') }}"></script>
+
 </body>
 </html>

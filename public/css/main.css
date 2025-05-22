@@ -65,7 +65,7 @@
   /* Estilo de la sección principal, donde sale la img, el titulo inicial y asi*/
   .hero {
     height: 100vh;
-    background-image: url('/photos/fondo1.png');
+    background-image: asset-url("photos/fondo1.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Auth;
 
 class RoleManager
 {
@@ -16,12 +15,20 @@ class RoleManager
      */
     public function handle(Request $request, Closure $next, $tipo): Response
     {
-        if($request->user()->tipo != $tipo){
-            return redirect()->route('welcome');
+        $user = $request->user();
 
+        if ($user->tipo === 0 && $tipo === 1) {
+             return redirect()->route('estudiantes.dashboard');
         }
-        // if(!Auth::check()){
-        //     return redirect()->route('login');
-        // }
+
+        if ($user->tipo === 1 && $tipo === 0) {
+             return redirect()->route('docentes.dashboard');
+        }
+
+        if ($request->user()->tipo !== $tipo) {
+            // return redirect()->route('dashboard');
+        }
+
+        return $next($request);
     }
 }

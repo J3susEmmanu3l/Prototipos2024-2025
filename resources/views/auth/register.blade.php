@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check-In-Mate</title>
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
 </head>
 <body>
   <div class="centrar">
@@ -54,7 +54,7 @@
 
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
-               
+
                 <div class="show-password">
                     <input type="checkbox" id="show-password">
                     <label for="show-password">{{__('Show Password')}}</label>

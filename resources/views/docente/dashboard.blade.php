@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/docente.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/docente/docente.css') }}">
 </head>
 <body>
 
@@ -33,8 +33,8 @@
             </button>
 
             <ul class="nav-list">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Estudiantes</a></li>
+                <li><a href="{{ route('docente.dashboard') }}">Inicio</a></li>
+                <li><a href="{{ route('docente.clases') }}">Mis Clases</a></li>
                 <li><a href="#">Asignaciones</a></li>
                 <li><a href="#">Calificaciones</a></li>
                 <li><a href="#">Configuración</a></li>
@@ -70,28 +70,28 @@
         <!-- Main Content -->
         <main class="main-content">
             <header>
-            <h1>Bienvenido, Profesor/a puto</h1>
+            <h1>Bienvenido, Profesor/a *NAME*</h1>
             </header>
             <section class="content">
                 <div class="card">
-                    <h3>Estudiantes</h3>
-                    <p>Ver lista completa de estudiantes</p>
-                    <button>Ver más</button>
+                    <h3>Mis Clases</h3>
+                    <p>Ver Mis clases</p>
+                    <a href="{{ route('docente.clases') }}"><button>Ver más</button></a>
                 </div>
                 <div class="card">
                     <h3>Asignaciones</h3>
                     <p>Revisar y asignar tareas</p>
-                    <button>Revisar</button>
+                    <a href=""><button>Revisar</button></a>
                 </div>
                 <div class="card">
                     <h3>Calificaciones</h3>
                     <p>Gestionar calificaciones</p>
-                    <button>Administrar</button>
+                    <a href=""><button>Administrar</button></a>
                 </div>
             </section>
         </main>
     </div>
-    <!--SE CORRIGE SCRIP ESTABA PANEL MAESTRO SE COLOCA PANEL ALUMNO-->
-    <script src="{{ asset('js/panelmaestro.js') }}"></script>
+
+    <script src="{{ asset('js/docente/panelmaestro.js') }}"></script>
 </body>
 </html>

@@ -11,4 +11,8 @@ class DocenteController extends Controller
     {
         return view('docente.dashboard');
     }
+    public function clases()
+    {
+        return view('docente.clases');
+    }
 }
